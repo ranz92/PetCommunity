@@ -20,15 +20,16 @@
 					<div>
 						${business.rating } 
 						<img src="${business.rating_img_url_small }  " class="media-object" alt='${business.name }' />
-						
 						${business.review_count } reviews<br>
-						${business.display_address }  <br>
+						<a href="geo:${business.latitude },${longitude"> ${business.display_address } </a> <br>
 						Phone Number: ${business.phone }  <br>
 						Whethe the restaurant is open ? ${business.is_closed }
 					</div>
 					
+					
 				</div>
 			</div>
+			<hr>
 			</c:forEach>
 		</div>
 	</div>
