@@ -58,7 +58,7 @@
 						<ul class="dropdown-menu">
 						    <li><a href="operationsTwi.jsp">Share</a></li>
 							<li><a href="statistics.jsp">Statistics</a></li>
-							<li><a href=http://localhost:3000>Mood</a></li>
+							<li><a href="mood.do">Mood</a></li>
 						</ul></li>
 						
                     <li><a href="photos.jsp">Photo Wall</a> 

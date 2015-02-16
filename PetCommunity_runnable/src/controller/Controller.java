@@ -22,6 +22,7 @@ public class Controller extends HttpServlet {
         Action.add(new VoteAction(model));
         Action.add(new NewPageAction(model));
         Action.add(new BusinessAction(model));
+        Action.add(new MoodAction(model));
 
     }
 
