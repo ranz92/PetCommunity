@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>function getImgs(tags) {
+  var URL = "http://api.flickr.com/services/rest/" +  // Wake up the Flickr API gods.
+    "?method=flickr.photos.search" +  // Get photo from a photoset. http://www.flickr.com/services/api/flickr.photosets.getPhotos.htm
+    "&api_key=a36f624550feb7db6f265e26f4b7b25f" +  // API key. Get one here: http://www.flickr.com/services/apps/create/apply/
+    "&tags=" + tags +  
+    "&tag_mode=any" +
+    "&privacy_filter=1" +  // 1 signifies all public photos.
+    "&per_page=20" + 
+    "&page=100" +
+    "&format=json&nojsoncallback=1";// For the sake of this example I am limiting it to 20 photos.
+
+  // See the API in action here: http://www.flickr.com/services/api/explore/flickr.photosets.getPhotos
+  $.getJSON(URL, function(data){
+    $.each(data.photoset.photo, function(i, item){
+      // Creating the image URL. Info: http://www.flickr.com/services/api/misc.urls.html
+      var img_src = "http://farm" + item.farm + ".static.flickr.com/" + item.server + "/" + item.id + "_" + item.secret + "_m.jpg";
+      var img_thumb = $("<img/>").attr("src", img_src).css("margin", "8px")
+      $(img_thumb).appendTo("#flickr-images");
+    });
+  });
+}
+
+$(document).ready(function() {
+  getImgs("pet,cat,cats,dog,dogs,pets"); // Call the function!
+});
+</script>
+
+
+</body>
+</html>
