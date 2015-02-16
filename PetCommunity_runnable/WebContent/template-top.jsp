@@ -62,7 +62,7 @@
 						</ul></li>
 
 					<li><a href="list.do">Pet of The Week Campaign</a></li>
-					<li><a href="businessSearch.jsp">Need Pet Services?</a></li>
+					<li><a href="business.do">Need Pet Services?</a></li>
 					<li><a href="logout">Logout</a></li>
 				</ul>
 			</div>

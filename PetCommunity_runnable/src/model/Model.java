@@ -18,6 +18,9 @@ public class Model {
 	private PhotoDAO photoDAO;
 	private UserDAO  userDAO;
 	private TweetDAO tweetDAO;
+	private YelpBusinessDAO bizDAO;
+	
+	
 
 	public Model(ServletConfig config) throws ServletException {
 		try {
@@ -28,6 +31,7 @@ public class Model {
 			userDAO  = new UserDAO("user", pool);
 			photoDAO = new PhotoDAO("photo", pool);
 			tweetDAO = new TweetDAO("tweet", pool);
+			bizDAO   =new YelpBusinessDAO("business",pool);
 			
 			if(userDAO.getUsers().length==0) {
 				UserBean user1 = new UserBean("aaa","aaa","aaa","aaa");
@@ -85,4 +89,6 @@ public class Model {
 	public PhotoDAO getPhotoDAO() { return photoDAO; }
 	public UserDAO  getUserDAO()  { return userDAO;  }
 	public TweetDAO  getTweetrDAO()  { return tweetDAO;  }
+	public YelpBusinessDAO  getBusinessDAO()  { return bizDAO;  }
+	
 }
