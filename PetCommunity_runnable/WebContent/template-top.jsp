@@ -61,6 +61,7 @@
 							<li><a href=http://localhost:3000>Mood</a></li>
 						</ul></li>
 
+                    <li><a href="photos.jsp">Photo Wall</a></li>
 					<li><a href="list.do">Pet of The Week Campaign</a></li>
 					<li><a href="business.do">Need Pet Services?</a></li>
 					<li><a href="logout">Logout</a></li>
