@@ -28,16 +28,16 @@ public class PostServlet extends HttpServlet {
 		 Twitter twitter = (Twitter) request.getSession().getAttribute("twitter");
 		 try {
 			 
-			 if(request.getParameter("fileName") != null) {
-		//	 twitter.updateStatus(text);
-			 StatusUpdate status = new StatusUpdate(text);
-			 status.setMedia(file);
-			 twitter.updateStatus(status);
-			 }
-			 else 
-			 {
+//			 if(request.getParameter("fileName") != null) {
+//		//	 twitter.updateStatus(text);
+//			 StatusUpdate status = new StatusUpdate(text);
+//			 status.setMedia(file);
+//			 twitter.updateStatus(status);
+//			 }
+//			 else 
+//			 {
 				 twitter.updateStatus(text);
-			 }
+//			 }
 			 
 		 } catch(TwitterException e) {
 			 throw new ServletException(e);
