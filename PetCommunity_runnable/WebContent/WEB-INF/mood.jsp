@@ -2,8 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
- <div class="container">
-<h2>How do people feel about</h2>
+<h2>Tweets about Pets</h2>
 
 <form action = "mood.do" method = "POST" class="navbar-form navbar-left" role="search">
 	<div class="form-group">
@@ -11,7 +10,6 @@
 	</div>
 	<button type="submit" class="btn btn-default">Submit</button>
 </form>
-<div id="piechart" style="width: 900px; height: 500px; margin-top:60px;"></div>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -33,7 +31,7 @@
 	</c:forEach>
 
 </table>
-
+<div id="piechart" style="width: 900px; height: 500px;"></div>
 </div>
 	
     <!-- Footer -->
@@ -63,7 +61,6 @@
             </div>
         </div>
     </footer>
-    </div>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -78,9 +75,6 @@
     	 var positive = ${positive};
     	 var negative = ${negative};
     	 var neutral = ${neutral};
-    	 var query = "${query}";
-   		var title = "Sentimental Analysis - ";
-   		var title1 = title.concat(query);
     	  var jsAtt = [['Sentimental', 'Number of Tweets'],
     	               ['Positive', positive],
     	               ['Negative', negative],
@@ -88,7 +82,7 @@
         var data = google.visualization.arrayToDataTable(jsAtt);
 
         var options = {
-          title: title1
+          title: 'Sentimental Analysis'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
