@@ -59,6 +59,7 @@
 						    <li><a href="operationsTwi.jsp">Share</a></li>
 							<li><a href="statistics.jsp">Statistics</a></li>
 							<li><a href="mood.do">Mood</a></li>
+							<li><a href="petAdoption.jsp">Pet Adoption</a></li>
 						</ul></li>
 
                     <li><a href="photos.jsp">Photo Wall</a></li>
