@@ -12,14 +12,8 @@
                         
                         <ul class="list-inline intro-social-buttons">
                             <li>
-                                <a href="signin" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-yelp fa-fw"></i> <span class="network-name">Yelp</span></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
-                            </li>
+                                <a href="signin" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Sign In With Twitter</span></a>
+                            </li>                        
                         </ul>
                     </div>
                 </div>
