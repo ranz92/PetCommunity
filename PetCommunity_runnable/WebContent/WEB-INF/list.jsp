@@ -96,7 +96,7 @@
 	   	//tArray[0][1] = 0;
 	   	tArray[0][1] = parseInt(firstv);
    		for(var a=1;a<=s1.length;a++){
-   			tArray[0][a]= s1[a - 1];
+   			tArray[0][a]= ‘Photo ’ + s1[a - 1];
    			//tArray[0][a]= firstv[a - 1];
    			tArray[1][a]= parseInt(s2[a - 1]);
    			//tArray[0][a]= 'a';
