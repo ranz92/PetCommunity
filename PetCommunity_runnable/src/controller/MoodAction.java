@@ -56,7 +56,7 @@ public class MoodAction extends Action {
 
 			// Any validation errors?
 			errors.addAll(form.getValidationErrors());
-			if (errors.size() != 0) {
+			if (errors.size() != 0 || form==null ||form.getQuery()==null) {
 				return "mood.jsp";
 			}
 //			ArrayList<String> twitList = new ArrayList<String>();
@@ -93,6 +93,7 @@ public class MoodAction extends Action {
 			session.setAttribute("positive",response.positive());
 			session.setAttribute("negative",response.negative());
 			session.setAttribute("neutral",response.neutral());
+			session.setAttribute("query", form.getQuery());
 			return "mood.jsp";
 		} catch (FormBeanException e) {
 			errors.add(e.getMessage());
