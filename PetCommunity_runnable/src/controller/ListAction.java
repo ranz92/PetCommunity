@@ -69,6 +69,18 @@ public class ListAction extends Action {
     		}
 
         	PhotoBean[] photoList = photoDAO.getAllPhotos();
+        	List<String> d = new ArrayList<String>();
+			List<String> in = new ArrayList<String>();
+        	for(int i = 0; i < photoList.length; i++)
+        		d.add(String.valueOf(photoList[i].getPhotoId()));
+        		//d.add(String.valueOf(i));
+        	request.setAttribute("flickrIdList", d);
+        	
+        	int[] vote = new int[photoList.length];
+        	for(int i = 0; i < photoList.length; i++)
+        		in.add(String.valueOf(photoList[i].getVote()));
+        	request.setAttribute("flickrVoteList", in);
+        		
 	        request.setAttribute("photoList",photoList);
 	        return "list.jsp";
         } catch (RollbackException e) {
