@@ -57,6 +57,7 @@
 					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="topics.jsp" id="topics">Topics <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 						    <li><a href="operationsTwi.jsp">Share</a></li>
+						    <li><a href="statistics.jsp">Statistics</a></li>
 							<li><a href="mood.do">Mood</a></li>
 							<li><a href="petAdoption.jsp">Pet Adoption</a></li>
 						</ul></li>
