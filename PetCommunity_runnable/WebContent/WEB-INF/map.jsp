@@ -32,6 +32,25 @@ function initialize( ) {
     for (int i=0;i<list.length;i++) {
   %>
   
+  var contentString = '<div class="media">'+
+                      '<a href="<%=list[i].getUrl()  %>" class="pull-left">'+
+                      '<img src="<%=list[i].getImage_url()  %>" class="media-object" alt="<%= list[i].getName() %>" /></a>'+
+                      '<div class="media-body">'+
+                      '<h4 class="media-heading"> <%= list[i].getName() %> </h4> </div>' +
+                      '<div> <%=list[i].getRating()  %>'+ 
+                          '<img src="<%= list[i].getRating_img_url_small() %> " class="media-object" alt="<%=list[i].getRating()  %> stars" />'+
+                          '<%= list[i].getReview_count() %> reviews <br> <hr>'+
+                      '</div><div class="media">'+
+                          '<%= list[i].getDisplay_address() %> <br> '+
+                          'Phone: <a href="tel:+1<%=list[i].getPhone()  %>" ><%=list[i].getPhone()  %> </a> <br>'+
+                          'Satus: <% if (list[i].getIs_closed()=="false") {  %> Open <%} else {%> Closed <% } %>'+
+                      '</div> </div>';
+
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString,
+        position : pos
+    });
+  
   var pos = new google.maps.LatLng(<%=list[i].getLatitude() %>,<%=list[i].getLongitude() %>);       
   var marker = new google.maps.Marker({
       position: pos,
@@ -40,29 +59,26 @@ function initialize( ) {
       //icon: image,
       title:"<%= list[i].getName() %>"
     });
-  google.maps.event.addListener(marker, 'click', function(event) {
-		infowindow.open(map, marker);
-});
+  
+    google.maps.event.addListener(marker, 'click', function(event) {
+	  if (infowindow) {
+          infowindow = new google.maps.InfoWindow();
+          infowindow.open(map, marker);
+      }
+  });
+    google.maps.event.addListener(marker, 'mouseover', function(event) {
+    if (marker.getAnimation() != null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+      }
+    });
+    google.maps.event.addListener(marker, 'mouseout', function(event) {
+    	marker.setAnimation(null);
+        infowindow.close();
+    });  
 	
-	var infowindow = new google.maps.InfoWindow({
- content: contentString
-});
-	var contentString = '<div class="media">'+
-	                         '<a href="<%=list[i].getUrl()  %>" class="pull-left">'+
-	                         '<img src="<%=list[i].getImage_url()  %>" class="media-object" alt="<%= list[i].getName() %>" /></a>'+
-                             '<div class="media-body">'+
-					             '<h4 class="media-heading"> <%= list[i].getName() %> </h4> </div>' +
-					             '<div> <%=list[i].getRating()  %>'+ 
-					                   '<img src="<%= list[i].getRating_img_url_small() %> " class="media-object" alt="<%=list[i].getRating()  %> stars" />'+
-					                   '<%= list[i].getReview_count() %> reviews <br> <hr>'+
-					          '</div><div class="media">'+
-					               '<%= list[i].getDisplay_address() %> <br> '+
-					               'Phone: <a href="tel:+1<%=list[i].getPhone()  %>" ><%=list[i].getPhone()  %> </a> <br>'+
-					               'Satus: <% if (list[i].getIs_closed()=="false") {  %> Open <%} else {%> Closed <% } %>'+
-					           '</div> </div>';
-				
-
-		                 
+	                 
   <%  } %>
   
 }
