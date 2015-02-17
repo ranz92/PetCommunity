@@ -1,4 +1,5 @@
 <jsp:include page="template-top.jsp" />
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="databeans.PhotoBean"%>
 
@@ -14,7 +15,8 @@
                 <a class="thumbnail" href="${flickr.url}">
                     <img class="img-responsive" alt="" src="${flickr.url }">
                 </a>
-				<button type="button" class="btn btn-info btn-block active disabled">Vote ${flickr.vote}</button>
+				<button type="button" class="btn btn-info btn-block active disabled">Current Vote is: ${flickr.vote}</button>
+				<button type="button" value="${flickr.photoId}" class="btn btn-info btn-lg btn-block">Vote for him/her!</button> 
             </div>
 			</c:forEach>
         </div>
