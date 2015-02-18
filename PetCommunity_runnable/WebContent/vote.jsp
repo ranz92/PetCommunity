@@ -20,17 +20,17 @@
 
 <div class="container">
 
-	<div class="row-fluid">
+	<div class="row clearfix">
 		<div class="span12">
 			<div class="hero-unit">
 				<h2 class="text-center">Your vote has been submitted</h2>
 
 				<hr>
 				<div class="row-fluid">
-					<div class="span6">
+					<div class="col-md-12 column">
 						<ul class="thumbnails">
 							<li class="thumbnails"><a href="${photo.url}">
-								<img src="${photo.url}"  height="320" width="240"></a>
+								<img src="${photo.url}"></a>
 							</li>
 						</ul>
 					</div>

@@ -25,11 +25,11 @@
 								<c:forEach items="${photoList}" var="flickr">
 									<div class="grid">
 										<div class="col-md-4 column">
-											<a href="${flickr.url}"><img class="img-responsive" src="${flickr.url}"></a>
+											<a href="${flickr.url}"><img alt="140x140" class="img-thumbnail" src="${flickr.url}"></a>
 											<form action="vote.do" method="POST">
-												<input type="submit" value="Like"> <input
+												<input type="submit" class="btn btn-lg btn-info btn-block" value="Like"> <input
 													type="hidden" name="vote" value="${flickr.photoId}">
-												<input type="text" value="Current vote: ${flickr.vote}" disabled>
+												<button type="button" class="btn btn-sm disabled btn-block">Current vote: ${flickr.vote}</button>
 												<br><br>
 											</form>
 										</div>

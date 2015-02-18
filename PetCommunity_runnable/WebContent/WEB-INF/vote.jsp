@@ -18,20 +18,22 @@
 }
 </style>
 
+<br>
+<br>
+
 <div class="container">
 
 	<div class="row-fluid">
 		<div class="span12">
 			<div class="hero-unit">
-				<h2 class="text-center">Thanks for you participation</h2>
+				<h2 class="text-center">You have voted for {photo.id}</h2>
 
 				<hr>
 				<div class="row-fluid">
 					<div class="span6">
-						<ul class="thumbnails">
-							<li class="thumbnails"><a href="${photo.url}"> <img
-									src="${photo.url}" height="320" width="240"></a></li>
-						</ul>
+						<div class="col-md-12 column">
+							<a href="${photo.url}"> <img src="${photo.url}" style="margin:0px auto;display:block"></a>
+						</div>
 					</div>
 
 					<div class="span6">
