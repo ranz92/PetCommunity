@@ -41,18 +41,6 @@
 				</div>
 			</div>
 			<hr>
-			<div class="col-md-12 column">
-				<div class="hero-unit">
-					<h4 class="text-center">Reason</h4>
-					<div>
-						<div class="tweet">
-							<div class="text-center">
-								<input type="text" name="tweetbox" value="${text}" style="width: 300px;">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 		<br> <br>
 
@@ -105,7 +93,7 @@
 			chartType : 'ColumnChart',
 			dataTable : tArray,
 			options : {
-				'title' : 'Vote Statistics'
+				'title' : 'Current Voting Results'
 			},
 			containerId : 'visualization'
 		});

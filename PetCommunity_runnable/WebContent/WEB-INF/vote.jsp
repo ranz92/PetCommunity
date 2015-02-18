@@ -88,8 +88,9 @@
 					</div>
 				</div>
 				<hr>
+				<br>
 				<p align="center">
-					<a class="btn btn-default" href="list.do">&laquo; Back</a>
+					<a class="btn btn-block btn-success btn-lg" href="list.do">&laquo; Back</a>
 				</p>
 				<p>
 					Share your voting on Twitter!
