@@ -51,13 +51,14 @@ public class VoteAction extends Action {
         request.setAttribute("errors",errors);
         
 		try {
-			String tweetbox = request.getParameterValues("tweetbox")[0];
-			int flickrbox = Integer.valueOf(request.getParameterValues("flickrbox")[0]);
+//			String tweetbox = request.getParameterValues("tweetbox")[0];
+//			int flickrbox = Integer.valueOf(request.getParameterValues("flickrbox")[0]);
+			int flickrbox = Integer.valueOf(request.getParameterValues("vote")[0]);
 			PhotoBean photo = photoDAO.getPhotoById(flickrbox);
 			photo.setVote(photo.getVote()+1);
 			photoDAO.update(photo);
 			request.setAttribute("photo", photo);
-			request.setAttribute("tweetbox", tweetbox);
+//			request.setAttribute("tweetbox", tweetbox);
             return "vote.jsp";
     	} catch (RollbackException e) {
     		errors.add(e.getMessage());

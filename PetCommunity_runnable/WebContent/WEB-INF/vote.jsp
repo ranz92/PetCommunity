@@ -23,25 +23,66 @@
 	<div class="row-fluid">
 		<div class="span12">
 			<div class="hero-unit">
-				<h2 class="text-center">Your vote has been submitted</h2>
+				<h2 class="text-center">Thanks for you participation</h2>
 
 				<hr>
 				<div class="row-fluid">
 					<div class="span6">
 						<ul class="thumbnails">
-							<li class="thumbnails"><a href="${photo.url}">
-								<img src="${photo.url}"  height="320" width="240"></a>
-							</li>
+							<li class="thumbnails"><a href="${photo.url}"> <img
+									src="${photo.url}" height="320" width="240"></a></li>
 						</ul>
 					</div>
 
 					<div class="span6">
-						<ul class="thumbnails">
-							<div class="grid">
-								<p class="text-left">Your current vote is ${photo.vote}</p>
-							</div>
-						
-						</ul>
+						<script type="text/javascript">
+							function drawVisualization() {
+								var d1 = '${flickrIdList}';
+								var d2 = '${flickrVoteList}';
+
+								d1 = d1.substring(1, d1.length - 1);
+
+								var s1 = d1.split(",");
+								var firstv;
+								for (var a = 0; a < d2.length; a++) {
+									if (d2[a] == ',')
+										break;
+									firstv += d2[a];
+								}
+								firstv = firstv.substring(10, firstv.length);
+								d2 = d2.substring(1, d2.length - 1);
+
+								var s2 = d2.split(",");
+								var tArray = new Array();
+								for (var a = 0; a < 2; a++) {
+									tArray[a] = new Array();
+								}
+								;
+								tArray[0][0] = '1';
+								//tArray[0][1] = 0;
+								tArray[0][1] = parseInt(firstv);
+								for (var a = 1; a <= s1.length; a++) {
+									tArray[0][a] = 'Photo ' + s1[a - 1];
+									//tArray[0][a]= firstv[a - 1];
+									tArray[1][a] = parseInt(s2[a - 1]);
+									//tArray[0][a]= 'a';
+									//tArray[1][a]= a;
+								}
+								;
+								var wrapper = new google.visualization.ChartWrapper(
+										{
+											chartType : 'ColumnChart',
+											dataTable : tArray,
+											options : {
+												'title' : 'Vote Statistics'
+											},
+											containerId : 'visualization'
+										});
+								wrapper.draw();
+							}
+							google.setOnLoadCallback(drawVisualization);
+						</script>
+
 					</div>
 				</div>
 				<hr>
@@ -52,9 +93,10 @@
 					Share your voting on Twitter!
 					<!--Twitter Share Button  -->
 					<a href="https://twitter.com/share" class="twitter-share-button"
-						data-lang="en" data-via="Team10_FS"
-						data-url="${photo.url}"
-						data-hashtags="Task8PetsoftheWeekCampaign" data-text="I vote for ${photo.caption} because ${tweetbox}" data-size="large">Share on Twitter</a>
+						data-lang="en" data-via="Team10_FS" data-url="${photo.url}"
+						data-hashtags="Task8PetsoftheWeekCampaign"
+						data-text="I vote for ${photo.caption} because ${tweetbox}"
+						data-size="large">Share on Twitter</a>
 					<script>
 						!function(d, s, id) {
 							var js, fjs = d.getElementsByTagName(s)[0];
@@ -73,5 +115,6 @@
 			</div>
 		</div>
 	</div>
+</div>
 
 	<jsp:include page="template-bottom.jsp" />
