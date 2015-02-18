@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <jsp:useBean id="business" class="databeans.BusinessBean" scope="page"/>
-<%@page import="databeans.BusinessBean;" %>
+<%@page import="databeans.BusinessBean" %>
 
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -42,10 +42,10 @@ var marker = new google.maps.Marker({
     title:"<%= list[i].getName() %>"
   });
   
-   google.maps.event.addListener(marker, 'click', function(event) {
+   google.maps.event.addListener(marker, 'click', function(event) {      
 	infowindow.open(map, marker);
     });
-    google.maps.event.addListener(marker, 'mouseover', function(event) {
+   /* google.maps.event.addListener(marker, 'mouseover', function(event) {
     if (marker.getAnimation() != null) {
         marker.setAnimation(null);
       } else {
@@ -57,7 +57,7 @@ var marker = new google.maps.Marker({
         //infowindow.close();
     });  
     
-    var infowindow = new google.maps.InfoWindow({
+ */   var infowindow = new google.maps.InfoWindow({
         content: contentString
         });
     	var contentString = '<div class="media">'+

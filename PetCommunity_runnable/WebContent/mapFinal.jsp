@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <jsp:useBean id="business" class="databeans.BusinessBean" scope="page"/>
-<%@page import="databeans.BusinessBean;" %>
+<%@page import="databeans.BusinessBean" %>
 
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
