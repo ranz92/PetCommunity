@@ -26,74 +26,34 @@
 	<div class="row-fluid">
 		<div class="span12">
 			<div class="hero-unit">
-				<h2 class="text-center">You have voted for {photo.id}</h2>
+				<h2 class="text-center">You have voted for ${photo.caption}</h2>
 
 				<hr>
 				<div class="row-fluid">
 					<div class="span6">
 						<div class="col-md-12 column">
-							<a href="${photo.url}"> <img src="${photo.url}" style="margin:0px auto;display:block"></a>
+							<a href="${photo.url}"> <img src="${photo.url}" alt="800x600"
+								style="margin: 0px auto; display: block"></a> <br>
+							<p align="center">
+								<a class="btn btn-block btn-success btn-lg" href="list.do">&laquo;
+									Back</a>
+							</p>
 						</div>
 					</div>
 
-					<div class="span6">
-						<script type="text/javascript">
-							function drawVisualization() {
-								var d1 = '${flickrIdList}';
-								var d2 = '${flickrVoteList}';
+					<hr>
+					<br>
 
-								d1 = d1.substring(1, d1.length - 1);
-
-								var s1 = d1.split(",");
-								var firstv;
-								for (var a = 0; a < d2.length; a++) {
-									if (d2[a] == ',')
-										break;
-									firstv += d2[a];
-								}
-								firstv = firstv.substring(10, firstv.length);
-								d2 = d2.substring(1, d2.length - 1);
-
-								var s2 = d2.split(",");
-								var tArray = new Array();
-								for (var a = 0; a < 2; a++) {
-									tArray[a] = new Array();
-								}
-								;
-								tArray[0][0] = '1';
-								//tArray[0][1] = 0;
-								tArray[0][1] = parseInt(firstv);
-								for (var a = 1; a <= s1.length; a++) {
-									tArray[0][a] = 'Photo ' + s1[a - 1];
-									//tArray[0][a]= firstv[a - 1];
-									tArray[1][a] = parseInt(s2[a - 1]);
-									//tArray[0][a]= 'a';
-									//tArray[1][a]= a;
-								}
-								;
-								var wrapper = new google.visualization.ChartWrapper(
-										{
-											chartType : 'ColumnChart',
-											dataTable : tArray,
-											options : {
-												'title' : 'Vote Statistics'
-											},
-											containerId : 'visualization'
-										});
-								wrapper.draw();
-							}
-							google.setOnLoadCallback(drawVisualization);
-						</script>
-
+					<h2 class="text-center">Share your voting on Twitter!</h2>
+					<h4 class="text-center">Add your comments for your voting:</h4>
+					<div>
+						<div class="tweet">
+							<div class="text-center">
+								<input type="text" name="tweetbox" value="${text}"
+									style="width: 300px;">
+							</div>
+						</div>
 					</div>
-				</div>
-				<hr>
-				<br>
-				<p align="center">
-					<a class="btn btn-block btn-success btn-lg" href="list.do">&laquo; Back</a>
-				</p>
-				<p>
-					Share your voting on Twitter!
 					<!--Twitter Share Button  -->
 					<a href="https://twitter.com/share" class="twitter-share-button"
 						data-lang="en" data-via="Team10_FS" data-url="${photo.url}"
@@ -111,13 +71,10 @@
 							}
 						}(document, "script", "twitter-wjs");
 					</script>
-				</p>
 
-				<div></div>
-
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
 	<jsp:include page="template-bottom.jsp" />

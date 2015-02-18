@@ -39,7 +39,7 @@ public class Model {
 				UserBean user1 = new UserBean("aaa","aaa","aaa","aaa");
 				userDAO.create(user1);
 				PhotoBean photo11 = new PhotoBean();
-				photo11.setUrl("http://www.sparkyhub.com/wp-content/uploads/2012/04/30-cute-puppies-you-will-want-to-take-home-with-you-27.jpg");
+				photo11.setUrl("http://www.sparkyhub.com/wp-content/uploads/2012/04/30-cute-puppies-you-will-want-to-take-home-with-you-27.jpg?d3b0cd");
 //				photo11.setUrl("src/cat1.jpg");
 				photo11.loadByteByURL();
 				photo11.setContentType("jpg");
