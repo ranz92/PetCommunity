@@ -23,8 +23,8 @@ public class CrawlerDB {
         try {
             Connection con = null; //定义一个MYSQL链接对象
             Class.forName("com.mysql.jdbc.Driver").newInstance(); //MYSQL驱动
-            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test", "root", "rootadmin"); //链接本地MYSQL
-            //con = DriverManager.getConnection("jdbc:mysql://task7.cuxzelmgyd6x.us-east-1.rds.amazonaws.com:3306/test", "awsuser", "team10-fs"); 
+            //con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test", "root", "rootadmin"); //链接本地MYSQL
+            con = DriverManager.getConnection("jdbc:mysql://task7.cuxzelmgyd6x.us-east-1.rds.amazonaws.com:3306/test", "awsuser", "team10-fs"); 
 
             Statement stmt; //创建声明
             stmt = con.createStatement();
