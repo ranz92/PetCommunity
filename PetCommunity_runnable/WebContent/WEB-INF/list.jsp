@@ -1,6 +1,5 @@
 <jsp:include page="template-top.jsp" />
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/thumbnail-gallery.css" rel="stylesheet">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="databeans.PhotoBean"%>
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
@@ -14,7 +13,7 @@
 	<form method="POST" action="vote.do">
 		<div class="row">
 			<h2 class="text-center">Vote for the Pets of the Week!</h2>
-			<div class="span6">
+			<div class="row clearfix">
 				<div class="hero-unit" align="center">
 					<section id="wrapper">
 						<h4>Choose Pictures</h4>
@@ -25,13 +24,13 @@
 							<c:if test="${!empty photoList}">
 								<c:forEach items="${photoList}" var="flickr">
 									<div class="grid">
-										<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-											<a class="thumbnail" href="${flickr.url}"><img
-												class="img-responsive" src="${flickr.url}"></a>
+										<div class="col-md-4 column">
+											<a href="${flickr.url}"><img class="img-responsive" src="${flickr.url}"></a>
 											<form action="vote.do" method="POST">
 												<input type="submit" value="Like"> <input
 													type="hidden" name="vote" value="${flickr.photoId}">
-												<input type="text" value="Current vote: ${flickr.vote}">
+												<input type="text" value="Current vote: ${flickr.vote}" disabled>
+												<br><br>
 											</form>
 										</div>
 									</div>
@@ -42,7 +41,7 @@
 				</div>
 			</div>
 			<hr>
-			<div class="col-lg-12">
+			<div class="col-md-12 column">
 				<div class="hero-unit">
 					<h4 class="text-center">Reason</h4>
 					<div>

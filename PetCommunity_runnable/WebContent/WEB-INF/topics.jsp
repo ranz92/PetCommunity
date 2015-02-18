@@ -16,7 +16,7 @@
                     <p class="lead">Pet Lover is the Best Place for all Pet Lovers for providing the services and activities as a community.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/cat.jpg" alt="">
+                    <img class="img-responsive" src="img/banner.jpg" alt="">
                 </div>
             </div>
 
