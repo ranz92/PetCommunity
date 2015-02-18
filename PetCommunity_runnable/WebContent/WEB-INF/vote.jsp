@@ -56,6 +56,7 @@
 								</div>
 							</div>
 						</div>
+						<br>
 						<input type="submit" class="btn btn-lg btn-info btn-block" value="Share">
 					</form>
 					

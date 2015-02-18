@@ -56,9 +56,11 @@
 								</div>
 							</div>
 						</div>
+						<br>
 						<!-- <input type="submit" class="btn btn-lg btn-info btn-block" value="Share"> -->
 					</form>
-
+					<p align="center">
+						Click Here to Share on Twitter --->
 					<!--Twitter Share Button  -->
 					<a href="https://twitter.com/share" class="twitter-share-button"
 						data-lang="en" data-via="Team10_FS"

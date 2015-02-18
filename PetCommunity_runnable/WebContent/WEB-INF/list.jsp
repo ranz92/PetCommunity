@@ -1,5 +1,4 @@
 <jsp:include page="template-top.jsp" />
-<link href="css/bootstrap.min.css" rel="stylesheet">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="databeans.PhotoBean"%>
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
