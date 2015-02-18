@@ -59,26 +59,26 @@
 						<!-- <input type="submit" class="btn btn-lg btn-info btn-block" value="Share"> -->
 					</form>
 					
+				<p>
 					<!--Twitter Share Button  -->
-					<div class="text-center">
-						Click here to share -->
-						<a href="https://twitter.com/share" class="twitter-share-button"
-							data-lang="en" data-via="Team10_FS" data-url="${photo.url}"
-							data-hashtags="Task8PetsoftheWeekCampaign"
-							data-text="I vote for ${photo.caption} because ${tweetbox}"
-							data-size="large">Share on Twitter</a>
-						<script>
-							!function(d, s, id) {
-								var js, fjs = d.getElementsByTagName(s)[0];
-								if (!d.getElementById(id)) {
-									js = d.createElement(s);
-									js.id = id;
-									js.src = "https://platform.twitter.com/widgets.js";
-									fjs.parentNode.insertBefore(js, fjs);
-								}
-							}(document, "script", "twitter-wjs");
-						</script>
-					</div>
+					<a href="https://twitter.com/share" class="twitter-share-button"
+						data-lang="en" data-via="Team10_FS"
+						data-url="${photo.url}"
+						data-hashtags="Task8PetsoftheWeekCampaign" data-text="I vote for ${photo.caption} because ${tweetbox}" data-size="large">Share on Twitter
+					</a>
+					<script>
+						!function(d, s, id) {
+							var js, fjs = d.getElementsByTagName(s)[0];
+							if (!d.getElementById(id)) {
+								js = d.createElement(s);
+								js.id = id;
+								js.src = "https://platform.twitter.com/widgets.js";
+								fjs.parentNode.insertBefore(js, fjs);
+							}
+						}(document, "script", "twitter-wjs");
+					</script>
+				</p>
+
 				</div>
 			</div>
 		</div>
