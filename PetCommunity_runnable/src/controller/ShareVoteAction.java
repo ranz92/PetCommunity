@@ -33,37 +33,33 @@ import formbeans.PhotoForm;
  * On success, forward to view.jsp for formatting.
  * 
  */
-public class VoteAction extends Action {
+public class ShareVoteAction extends Action {
 	private FormBeanFactory<PhotoForm> formBeanFactory = FormBeanFactory.getInstance(PhotoForm.class);
 
 	private PhotoDAO photoDAO;
 	private UserDAO  userDAO;
 	
-    public VoteAction(Model model) {
+    public ShareVoteAction(Model model) {
     	photoDAO = model.getPhotoDAO();
     	userDAO  = model.getUserDAO();
 	}
 
-    public String getName() { return "vote.do"; }
+    public String getName() { return "sharevote.do"; }
 
     public String perform(HttpServletRequest request) {
         List<String> errors = new ArrayList<String>();
         request.setAttribute("errors",errors);
-        
-		try {
-//			String tweetbox = request.getParameterValues("tweetbox")[0];
-//			int flickrbox = Integer.valueOf(request.getParameterValues("flickrbox")[0]);
-			int flickrbox = Integer.valueOf(request.getParameterValues("vote")[0]);
-			PhotoBean photo = photoDAO.getPhotoById(flickrbox);
-			photo.setVote(photo.getVote()+1);
-			photoDAO.update(photo);
-			request.getSession().setAttribute("photo", photo);
-//			request.setAttribute("photo", photo);
-//			request.setAttribute("tweetbox", tweetbox);
-            return "vote.jsp";
-    	} catch (RollbackException e) {
-    		errors.add(e.getMessage());
-    		return "error.jsp";
-    	} 
+        String tweetbox = null;
+        try{
+        	tweetbox = request.getParameterValues("tweetbox")[0];
+        } catch (Exception e) {
+//        	errors.add("Please enter your reason");
+//        	return "error.jsp";
+        }
+//		PhotoBean photo = (PhotoBean) request.getSession().getAttribute("photo");
+//		request.getSession().removeAttribute("photo");
+//		request.setAttribute("photo", photo);
+		request.setAttribute("tweetbox", tweetbox);
+        return "sharevote.jsp";
     }
 }

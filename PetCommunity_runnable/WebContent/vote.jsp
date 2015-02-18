@@ -47,6 +47,7 @@
 				<hr>
 				<p align="center">
 					<a class="btn btn-default" href="list.do">&laquo; Back</a>
+					<a class="btn btn-default" href="sharevote.do">&laquo; Share</a>
 				</p>
 				<p>
 					Share your voting on Twitter!
