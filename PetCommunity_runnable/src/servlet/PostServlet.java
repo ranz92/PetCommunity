@@ -18,28 +18,24 @@ import twitter4j.StatusUpdate;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 
-@javax.servlet.annotation.MultipartConfig
 public class PostServlet extends HttpServlet {
 	private static final long serialVersionUID = 2132731135996613711L;
 	 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String text = request.getParameter("text");
 		Twitter twitter = (Twitter) request.getSession().getAttribute("twitter");
 		DiskFileItemFactory factory = new DiskFileItemFactory();
 	    ServletFileUpload sfu = new ServletFileUpload(factory);
-	    
+	    String twi = "";
 
-	    
-	    
 		try {
-			if(request.getParameter("fileName") != null) {
 				List<FileItem> items = sfu.parseRequest(request);
 			     for(int i =0;i<items.size();i++){
 			      FileItem item =items.get(i);
 			      if(item.isFormField()){
-			 //      String name = item.getString();
+			    	  String text = item.getString();
+			    	  twi = twi + text;
 			      }
-			      else{
+			      if(!item.isFormField()) {
 			       ServletContext context  = getServletContext();
 			       String path  =context.getRealPath("upload");
 			       File file = new File(path+"/pic_");
@@ -50,14 +46,11 @@ public class PostServlet extends HttpServlet {
 			       file = new File(path+"/"+"pic_"+"/"+fileName);
 			       
 			       item.write(file);
-			       StatusUpdate status = new StatusUpdate(text);
-					 status.setMedia(file);
-					 twitter.updateStatus(status);
+			       StatusUpdate status = new StatusUpdate(twi);
+				   status.setMedia(file);
+				   twitter.updateStatus(status);
 			       
 			      }	
-			}
-			} else {
-				twitter.updateStatus(text);
 			}
 		} catch (TwitterException e) {
 			 throw new ServletException(e);
