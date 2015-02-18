@@ -57,7 +57,7 @@
 					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="topics.jsp" id="topics">Topics <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="topics.jsp">Your Twitter Wall</a></li>
-						    <li><a href="operationsTwi.jsp">Share Your Pets</a></li>
+<!-- 						    <li><a href="operationsTwi.jsp">Share Your Pets</a></li> -->
 							 <li><a href="photos.jsp">Photo Wall</a>	
 						</ul></li>         
                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="" id="location">Locate a Pet Service <span class="caret"></span></a>                   	

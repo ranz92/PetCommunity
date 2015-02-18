@@ -4,9 +4,8 @@
           src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true;    
           key=ABQIAAAAevysxt9O5lBUCrSalm80MxQx8gmx0K-_Fjj4Tf8bNXH3BBSxZRRmI_CuZM2zQyuXEpG_uxt-aqPr-A"    
           type="text/javascript"></script> 
-    
-                  
-                        <h2 style = "margin-top:120px; padding-bottom:30px;">Bring a pet home today!</h2>
+            
+                        <h2 style = "margin-top:50px; padding-bottom:30px;">Bring a Pet Home Today!</h2>
                         
                        
           

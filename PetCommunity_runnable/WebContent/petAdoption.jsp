@@ -6,7 +6,7 @@
           type="text/javascript"></script> 
     
                   
-                        <h2 style = "margin-top:120px; padding-bottom:30px;">Bring a pet home today!</h2>
+                        <h2 style = "margin-top:80px; padding-bottom:30px;">Bring a Pet Home Today!</h2>
                         
                        
           
