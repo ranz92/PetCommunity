@@ -64,7 +64,7 @@ public class PostServlet extends HttpServlet {
 		 } catch(Exception e) {
 			 e.printStackTrace();
 		 }
-		response.sendRedirect("operationsTwi.jsp");
+		response.sendRedirect("topics.jsp");
 		
 	}
 }

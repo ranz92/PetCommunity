@@ -56,16 +56,19 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="topics.jsp" id="topics">Topics <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-						    <li><a href="operationsTwi.jsp">Share</a></li>
-						    <li><a href="statistics.jsp">Statistics</a></li>
-							<li><a href="mood.do">Mood</a></li>
-							<li><a href="petAdoption.jsp">Pet Adoption</a></li>
-						</ul></li>
-
-                    <li><a href="photos.jsp">Photo Wall</a></li>
+							<li><a href="topics.jsp">Your Twitter Wall</a></li>
+						    <li><a href="operationsTwi.jsp">Share Your Pets</a></li>
+							 <li><a href="photos.jsp">Photo Wall</a>	
+						</ul></li>         
+                   <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="" id="location">Locate a Pet Service <span class="caret"></span></a>                   	
+                    	<ul class="dropdown-menu">
+                    	<li><a href="business.do">Find Pet-Friendly Restaurants</a></li>
+                    	<li><a href="petAdoption.jsp">Pet Adoption</a></li>
+                   </ul></li> 	
+					
 					<li><a href="list.do">Pet of The Week Campaign</a></li>
-					<li><a href="business.do">Need Pet Services?</a></li>
-					<li><a href="logout">Logout</a></li>
+					<li><a href="mood.do">See People's Feeling on Pets</a></li>
+<!-- 					<li><a href="logout">Logout</a></li> -->
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
