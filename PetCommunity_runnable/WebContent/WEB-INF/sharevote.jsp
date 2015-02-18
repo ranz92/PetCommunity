@@ -52,14 +52,13 @@
 							<div class="tweet">
 								<div class="text-center">
 									<input type="text" name="tweetbox" value="${tweetbox}"
-										style="width: 300px;" readonly>
+										style="width: 300px;" disabled>
 								</div>
 							</div>
 						</div>
 						<!-- <input type="submit" class="btn btn-lg btn-info btn-block" value="Share"> -->
 					</form>
-					
-				<p>
+
 					<!--Twitter Share Button  -->
 					<a href="https://twitter.com/share" class="twitter-share-button"
 						data-lang="en" data-via="Team10_FS"
@@ -77,7 +76,6 @@
 							}
 						}(document, "script", "twitter-wjs");
 					</script>
-				</p>
 
 				</div>
 			</div>

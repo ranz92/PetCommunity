@@ -18,44 +18,53 @@
 }
 </style>
 
+<br>
+<br>
+
 <div class="container">
 
-	<div class="row clearfix">
+	<div class="row-fluid">
 		<div class="span12">
 			<div class="hero-unit">
-				<h2 class="text-center">Your vote has been submitted</h2>
+				<h2 class="text-center">You have voted for ${photo.caption}</h2>
 
 				<hr>
 				<div class="row-fluid">
-					<div class="col-md-12 column">
-						<ul class="thumbnails">
-							<li class="thumbnails"><a href="${photo.url}">
-								<img src="${photo.url}"></a>
-							</li>
-						</ul>
+					<div class="span6">
+						<div class="col-md-12 column">
+							<a href="${photo.url}"> <img src="${photo.url}" alt="800x600"
+								style="margin: 0px auto; display: block"></a> <br>
+							<p align="center">
+								<a class="btn btn-block btn-success btn-lg" href="list.do">&laquo;
+									Back</a>
+							</p>
+						</div>
 					</div>
 
-					<div class="span6">
-						<ul class="thumbnails">
-							<div class="grid">
-								<p class="text-left">Your current vote is ${photo.vote}</p>
+					<hr>
+					<br>
+
+					<h2 class="text-center">Share your voting on Twitter!</h2>
+					
+					<form method="POST" action="sharevote.do">
+						<h4 class="text-center">Add your comments for your voting:</h4>
+						<div>
+							<div class="tweet">
+								<div class="text-center">
+									<input type="text" name="tweetbox" value="${text}"
+										style="width: 300px;">
+								</div>
 							</div>
-						
-						</ul>
-					</div>
-				</div>
-				<hr>
-				<p align="center">
-					<a class="btn btn-default" href="list.do">&laquo; Back</a>
-					<a class="btn btn-default" href="sharevote.do">&laquo; Share</a>
-				</p>
-				<p>
-					Share your voting on Twitter!
+						</div>
+						<input type="submit" class="btn btn-lg btn-info btn-block" value="Share">
+					</form>
+					
 					<!--Twitter Share Button  -->
-					<a href="https://twitter.com/share" class="twitter-share-button"
-						data-lang="en" data-via="Team10_FS"
-						data-url="${photo.url}"
-						data-hashtags="Task8PetsoftheWeekCampaign" data-text="I vote for ${photo.caption} because ${tweetbox}" data-size="large">Share on Twitter</a>
+					<%-- <a href="https://twitter.com/share" class="twitter-share-button"
+						data-lang="en" data-via="Team10_FS" data-url="${photo.url}"
+						data-hashtags="Task8PetsoftheWeekCampaign"
+						data-text="I vote for ${photo.caption} because ${tweetbox}"
+						data-size="large">Share on Twitter</a>
 					<script>
 						!function(d, s, id) {
 							var js, fjs = d.getElementsByTagName(s)[0];
@@ -66,9 +75,9 @@
 								fjs.parentNode.insertBefore(js, fjs);
 							}
 						}(document, "script", "twitter-wjs");
-					</script>
-				</p>
+					</script> --%>
 
+				</div>
 			</div>
 		</div>
 	</div>
