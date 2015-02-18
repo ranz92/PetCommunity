@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.genericdao.RollbackException;
 
@@ -21,13 +22,16 @@ public class BusinessAction extends Action{
     public String getName() { return "business.do"; }
 
     public String perform(HttpServletRequest request) {
+    	HttpSession session = request.getSession();
+
     	List<String> errors = new ArrayList<String>();
         request.setAttribute("errors",errors);
         
         try {
 			BusinessBean[] businessList = busDAO.getAllBusiness();
-			request.setAttribute("businessList",businessList);
-	        return "map.jsp";
+			session.setAttribute("businessList",businessList);
+			//request.setAttribute("businessList",businessList);
+	        return "yelpSearch.jsp";
 		} catch (RollbackException e) {
 			// TODO Auto-generated catch block
 			errors.add(e.getMessage());
