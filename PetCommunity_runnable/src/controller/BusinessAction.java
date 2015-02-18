@@ -27,7 +27,7 @@ public class BusinessAction extends Action{
         try {
 			BusinessBean[] businessList = busDAO.getAllBusiness();
 			request.setAttribute("businessList",businessList);
-	        return "yelpSearch.jsp";
+	        return "map.jsp";
 		} catch (RollbackException e) {
 			// TODO Auto-generated catch block
 			errors.add(e.getMessage());
