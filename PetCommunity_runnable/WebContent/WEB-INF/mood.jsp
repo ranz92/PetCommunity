@@ -2,37 +2,43 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
  <div class="container">
- <h2>How do people feel about</h2>
+ <h2>Which pet should you get?</h2>
+ <h3>See how do people feel about</h3>
  <div class="row clearfix">
 		<div class="col-md-12 column">
 			<div class="row clearfix">
 				<div class="col-md-2 column">
 <form action = "mood.do" method = "POST" class="form-group" role="search">
 	<div class="form-group">
-		<input type="text" name = query1 class="form-control" />
+		<input type="text" name = query1 id = "query1" class="form-control" />
 	</div>
 	VS
 	<div class="form-group">
-		<input type="text" name = query2 class="form-control" />
+		<input type="text" name = query2 id = "query2" class="form-control" />
 	</div>
 	<button type="submit" class="btn btn-default">Submit</button>
 </form>
 <br>
-<form action="mood.do" method="post">
-    <a href="#" onclick="parentNode.submit();">#cat</a>
-    <input type="hidden" name="query" value="#cat">
-</form>
-<form action="mood.do" method="post">
-    <a href="#" onclick="parentNode.submit();">#dog</a>
-    <input type="hidden" name="query" value="#dog">
-</form>
 
-<form action="mood.do" method="post">
-    <a href="#" onclick="parentNode.submit();">#puppy</a>
-    <input type="hidden" name="query" value="#puppy">
-</form>
-
-				</div>
+   <a href="#" onclick='document.getElementById("query2").value = document.getElementById("query1").value;
+    document.getElementById("query1").value  = this.text;'>#cat</a><br>
+    <a href="#" onclick='document.getElementById("query2").value = document.getElementById("query1").value;
+    document.getElementById("query1").value  = this.text;'>#dog</a><br>
+    <a href="#" onclick='document.getElementById("query2").value = document.getElementById("query1").value;
+    document.getElementById("query1").value  = this.text;'>#chiwawa</a><br>
+    <a href="#" onclick='document.getElementById("query2").value = document.getElementById("query1").value;
+    document.getElementById("query1").value  = this.text;'>#Labrador Retriever</a><br><a href="#" onclick='document.getElementById("query2").value = document.getElementById("query1").value;
+    document.getElementById("query1").value  = this.text;'>#German Shepherd</a><br><a href="#" onclick='document.getElementById("query2").value = document.getElementById("query1").value;
+    document.getElementById("query1").value  = this.text;'>#Golden Retriever</a><br><a href="#" onclick='document.getElementById("query2").value = document.getElementById("query1").value;
+    document.getElementById("query1").value  = this.text;'>#Beagle</a><br><a href="#" onclick='document.getElementById("query2").value = document.getElementById("query1").value;
+    document.getElementById("query1").value  = this.text;'>#Bulldog</a><br><a href="#" onclick='document.getElementById("query2").value = document.getElementById("query1").value;
+    document.getElementById("query1").value  = this.text;'>#Persian</a><br><a href="#" onclick='document.getElementById("query2").value = document.getElementById("query1").value;
+    document.getElementById("query1").value  = this.text;'>#Maine Coon</a><br><a href="#" onclick='document.getElementById("query2").value = document.getElementById("query1").value;
+    document.getElementById("query1").value  = this.text;'>#Exotic</a><br><a href="#" onclick='document.getElementById("query2").value = document.getElementById("query1").value;
+    document.getElementById("query1").value  = this.text;'>#Siamese</a><br><a href="#" onclick='document.getElementById("query2").value = document.getElementById("query1").value;
+    document.getElementById("query1").value  = this.text;'>#Abyssinian</a>
+    
+		</div>
 				<div class="col-md-5 column">
 				<div id="piechart1" style="width: 900px; height: 500px; "></div>
 				 <c:if test="${not empty result1}">
@@ -151,6 +157,10 @@
     <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
+    function myFunction(elmnt) {
+	    document.getElementById("query2").value = document.getElementById("query1").value;
+	    document.getElementById("query1").value  = elmnt.value;
+	};
       google.load("visualization", "1", {packages:["corechart"]});
       <c:if test="${not empty query1}">
       google.setOnLoadCallback(drawChart);
@@ -190,8 +200,6 @@
        };
        var chart2 = new google.visualization.PieChart(document.getElementById('piechart2'));     
        chart2.draw(data2, options2);
-
-     
       }
     </script>
 </body>
