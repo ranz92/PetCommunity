@@ -296,9 +296,10 @@ public class YelpAPITestV2 {
    * <p>
    * After entering your OAuth credentials, execute <tt><b>run.sh</b></tt> to run this example.
    */
-  public static void main(String[] args) {
+  //public static void main(String[] args) {
+  public static void execute() {
    YelpAPICLI yelpApiCli = new YelpAPICLI();
-   new JCommander(yelpApiCli, args);
+   //new JCommander(yelpApiCli, args);
 
     YelpAPITestV2 yelpApi = new YelpAPITestV2(CONSUMER_KEY, CONSUMER_SECRET, TOKEN, TOKEN_SECRET);
     queryAPITest(yelpApi, yelpApiCli);

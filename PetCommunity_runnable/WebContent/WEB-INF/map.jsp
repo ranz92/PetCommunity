@@ -1,20 +1,4 @@
-Skip to content
- This repository
-Explore
-Gist
-Blog
-Help
-Yifan0916 Yifan0916
- 
-You don't have any verified emails. We recommend verifying at least one email.
-Email verification helps our support team verify ownership if you lose account access and allows you to receive all the notifications you ask for.
-5  Unwatch 
-  Star 0
- Fork 0team-fs/PetCommunity_runnable
- branch: master  PetCommunity_runnable/PetCommunity_runnable/WebContent/WEB-INF/map.jsp
-Yifan0916Yifan0916 21 minutes ago update map
-1 contributor
-95 lines (81 sloc)  3.409 kb RawBlameHistory   
+
 <jsp:include page="template-top.jsp" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>

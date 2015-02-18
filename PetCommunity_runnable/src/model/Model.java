@@ -11,6 +11,7 @@ import org.genericdao.ConnectionPool;
 import org.genericdao.DAOException;
 import org.genericdao.RollbackException;
 
+import crawler.YelpAPITestV2;
 import databeans.PhotoBean;
 import databeans.UserBean;
 
@@ -33,6 +34,7 @@ public class Model {
 			tweetDAO = new TweetDAO("tweet", pool);
 			bizDAO   =new YelpBusinessDAO("business",pool);
 			
+			YelpAPITestV2.execute();
 			if(userDAO.getUsers().length==0) {
 				UserBean user1 = new UserBean("aaa","aaa","aaa","aaa");
 				PhotoBean photo11 = new PhotoBean();
