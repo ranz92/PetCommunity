@@ -6,10 +6,14 @@
  <div class="row clearfix">
 		<div class="col-md-12 column">
 			<div class="row clearfix">
-				<div class="col-md-4 column">
+				<div class="col-md-2 column">
 <form action = "mood.do" method = "POST" class="form-group" role="search">
 	<div class="form-group">
-		<input type="text" name = query class="form-control" />
+		<input type="text" name = query1 class="form-control" />
+	</div>
+	VS
+	<div class="form-group">
+		<input type="text" name = query2 class="form-control" />
 	</div>
 	<button type="submit" class="btn btn-default">Submit</button>
 </form>
@@ -29,8 +33,9 @@
 </form>
 
 				</div>
-				<div class="col-md-8 column">
-				<div id="piechart" style="width: 900px; height: 500px; margin-top:-60px;"></div>
+				<div class="col-md-5 column">
+				<div id="piechart1" style="width: 900px; height: 500px; "></div>
+				 <c:if test="${not empty result1}">
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -40,19 +45,66 @@
 	</thead>
 
 
-	<c:forEach var="item" items="${result}">
+	<c:forEach var="item" items="${result1}">
 
-
-		<tr>
+	<c:if test="${item.polarity == '4'}">
+		<tr class="success">
 			<td>${item.text}</td>
 		</tr>
-
+</c:if>
+<c:if test="${item.polarity == '2'}">
+		<tr class="warning">
+			<td>${item.text}</td>
+		</tr>
+</c:if>
+<c:if test="${item.polarity == '0'}">
+		<tr class="danger">
+			<td>${item.text}</td>
+		</tr>
+</c:if>
 
 
 	</c:forEach>
+	
 
 </table>
+</c:if>
+</div>
+	<div class="col-md-5 column">
+				<div id="piechart2" style="width: 900px; height: 500px; "></div>
+				 <c:if test="${not empty result2}">
+<table class="table table-striped">
+	<thead>
+		<tr>
 
+			<th>Tweets</th>
+		</tr>
+	</thead>
+
+
+	<c:forEach var="item" items="${result2}">
+
+
+		<c:if test="${item.polarity == '4'}">
+		<tr class="success">
+			<td>${item.text}</td>
+		</tr>
+</c:if>
+<c:if test="${item.polarity == '2'}">
+		<tr class="warning">
+			<td>${item.text}</td>
+		</tr>
+</c:if>
+<c:if test="${item.polarity == '0'}">
+		<tr class="danger">
+			<td>${item.text}</td>
+		</tr>
+</c:if>
+	</c:forEach>
+	
+
+</table>
+</c:if>
 </div>
 				</div>
 
@@ -100,24 +152,46 @@
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
+      <c:if test="${not empty query1}">
       google.setOnLoadCallback(drawChart);
+      </c:if>
+      
       function drawChart() {
-    	 var positive = ${positive};
-    	 var negative = ${negative};
-    	 var neutral = ${neutral};
-    	 var query = "${query}";
+    	 var positive1 = ${positive1};
+    	 var negative1 = ${negative1};
+    	 var neutral1 = ${neutral1};
+    	 var query1 = "${query1}";
    		var title = "Sentimental Analysis - ";
-   		var title1 = title.concat(query);
-    	  var jsAtt = [['Sentimental', 'Number of Tweets'],
-    	               ['Positive', positive],
-    	               ['Negative', negative],
-    	               ['Neutral', neutral]];
-        var data = google.visualization.arrayToDataTable(jsAtt);
-        var options = {
-          title: title1
+   		var title1 = title.concat(query1);
+    	  var jsAtt1 = [['Sentimental', 'Number of Tweets'],
+    	               ['Positive', positive1],
+    	               ['Negative', negative1],
+    	               ['Neutral', neutral1]];
+        var data1 = google.visualization.arrayToDataTable(jsAtt1);
+        var options1 = {
+          title: title1,
+          chartArea:{left:20,top:60,width:'50%',height:'75%'}
         };
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-        chart.draw(data, options);
+        var chart1 = new google.visualization.PieChart(document.getElementById('piechart1'));     
+        chart1.draw(data1, options1);
+        var positive2 = ${positive2};
+   	 var negative2 = ${negative2};
+   	 var neutral2 = ${neutral2};
+   	 var query2 = "${query2}";
+  		var title2 = title.concat(query2);
+   	  var jsAtt2 = [['Sentimental', 'Number of Tweets'],
+   	               ['Positive', positive2],
+   	               ['Negative', negative2],
+   	               ['Neutral', neutral2]];
+       var data2 = google.visualization.arrayToDataTable(jsAtt2);
+       var options2 = {
+         title: title2,
+         chartArea:{left:20,top:60,width:'50%',height:'75%'}
+       };
+       var chart2 = new google.visualization.PieChart(document.getElementById('piechart2'));     
+       chart2.draw(data2, options2);
+
+     
       }
     </script>
 </body>

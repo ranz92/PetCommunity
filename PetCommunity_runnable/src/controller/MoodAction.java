@@ -56,7 +56,7 @@ public class MoodAction extends Action {
 
 			// Any validation errors?
 			errors.addAll(form.getValidationErrors());
-			if (errors.size() != 0 || form==null ||form.getQuery()==null) {
+			if (errors.size() != 0 || form==null ||form.getQuery1()==null ||form.getQuery2()==null) {
 				return "mood.jsp";
 			}
 //			ArrayList<String> twitList = new ArrayList<String>();
@@ -87,13 +87,20 @@ public class MoodAction extends Action {
 //				errors.add("Failed to search tweets: " + te.getMessage());
 //				return "mood.jsp";
 //			}
-			SentimentExec se = new SentimentExec(form.getQuery());
-			Sentiment140Response response = se.getResponse();
-			session.setAttribute("result",response.getData());
-			session.setAttribute("positive",response.positive());
-			session.setAttribute("negative",response.negative());
-			session.setAttribute("neutral",response.neutral());
-			session.setAttribute("query", form.getQuery());
+			SentimentExec se1 = new SentimentExec(form.getQuery1());
+			Sentiment140Response response1 = se1.getResponse();
+			session.setAttribute("result1",response1.getData());
+			session.setAttribute("positive1",response1.positive());
+			session.setAttribute("negative1",response1.negative());
+			session.setAttribute("neutral1",response1.neutral());
+			session.setAttribute("query1", form.getQuery1());
+			SentimentExec se2 = new SentimentExec(form.getQuery2());
+			Sentiment140Response response2 = se2.getResponse();
+			session.setAttribute("result2",response2.getData());
+			session.setAttribute("positive2",response2.positive());
+			session.setAttribute("negative2",response2.negative());
+			session.setAttribute("neutral2",response2.neutral());
+			session.setAttribute("query2", form.getQuery2());
 			return "mood.jsp";
 		} catch (FormBeanException e) {
 			errors.add(e.getMessage());
